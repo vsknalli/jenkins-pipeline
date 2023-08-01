@@ -1,19 +1,12 @@
-@Library("mylibs") _
-pipeline {
-  agent any
-  tools {
-    maven 'maven2'
+node {
+  stage('SCM Chekcout'){
+    git 'https://github.com/vsknalli/jenkins-pipeline'    
   }
-  stages{
-    stage("Maven Build"){
-      steps{
-        sh "mvn clean package"
-      }
-    }
-    stage("Deploy To Dev"){
-      steps{
-        tomcatDeploy("tomcat-dev","ec2-user",["172.31.13.89","172.31.13.89"])
-      }
-    }
+  stage('Compile and packae'){
+    sh 'mvn clean package'
+    
   }
+   
 }
+
+
