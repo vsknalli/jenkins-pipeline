@@ -3,7 +3,7 @@ node {
     git 'https://github.com/vsknalli/jenkins-pipeline'    
   }
   stage('Compile and packae'){
-    sh 'mvn clean package'
+    sh 'clean package'
     
   }
    
