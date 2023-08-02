@@ -3,8 +3,9 @@ node {
     git 'https://github.com/vsknalli/jenkins-pipeline'    
   }
   stage('Compile & packae'){
-    sh "mvn clean package"
-    
+    // get maven hoem path
+    def mavenhome = tool name: 'maven-3', type: 'maven'
+    sh "${mavenhome}/bin/mvn package"
   }
    
 }
