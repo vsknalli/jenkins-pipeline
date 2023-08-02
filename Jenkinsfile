@@ -7,6 +7,12 @@ node {
     def mavenhome = tool name: 'maven-3.9.3', type: 'maven'
     sh "${mavenhome}/bin/mvn package"
   }
+  stage('Slack Notifications'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/', 
+      channel: 'devopscicd', color: 'good', 
+      message: 'Welcome to Jenkins Slack Notificaiton...!!!', 
+      tokenCredentialId: 'slack'
+  }
   
 }
 
