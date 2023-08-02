@@ -2,7 +2,7 @@ node {
   stage('SCM Chekcout'){
     git 'https://github.com/vsknalli/jenkins-pipeline'    
   }
-  stage('Compile and packae'){
+  stage('Compile & packae'){
     sh "mvn clean package"
     
   }
