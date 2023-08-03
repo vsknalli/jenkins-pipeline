@@ -10,7 +10,7 @@ node {
   stage('Slack Notifications'){
     slackSend baseUrl: 'https://hooks.slack.com/services/', 
       channel: 'devopscicd', color: 'good', 
-      message: 'Welcome to Jenkins Slack Notificaiton...!!!', 
+      message: 'Welcome to Jenkins Slack Notificaiton.BY....SENTHILKUMAR VEERANAN..!!!', 
       tokenCredentialId: 'slack'
   }
   
